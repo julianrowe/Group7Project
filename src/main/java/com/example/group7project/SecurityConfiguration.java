@@ -6,11 +6,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 // Configures AWS Cognito login and logout
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter 
-{
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    
     @Override
-    protected void configure(HttpSecurity http) throws Exception 
-    {
+    protected void configure(HttpSecurity http) throws Exception {
         http.csrf()
             .and()
             .oauth2Login()
