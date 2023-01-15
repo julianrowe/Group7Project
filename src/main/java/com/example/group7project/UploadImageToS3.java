@@ -13,7 +13,8 @@ import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.waiters.S3Waiter;
- 
+
+// Uploads an image to AWS S3
 public class UploadImageToS3 {
     private static final String BUCKET = "group-7-bucket";
      

@@ -3,6 +3,7 @@ package com.example.group7project;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
+// Runs the application
 @SpringBootApplication
 public class SpringtestApplication {
 
