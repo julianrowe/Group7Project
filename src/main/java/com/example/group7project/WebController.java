@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebController implements WebMvcConfigurer 
 {
 	
-    @RequestMapping("/AmazonCognito")
-    public ModelAndView AmazonCognito () 
+    @RequestMapping("/")
+    public ModelAndView Index () 
     {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("cognito.html");
+        modelAndView.setViewName("index.html");
         return modelAndView;
     }
 }
