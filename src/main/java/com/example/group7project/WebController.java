@@ -29,13 +29,13 @@ public class WebController {
     public String handleUploadForm(Model model, String description, @RequestParam("file") MultipartFile multipart) {
         String fileName = multipart.getOriginalFilename();
          
-        System.out.println("Description: " + description);
+        System.out.println("\nDescription: " + description);
         System.out.println("filename: " + fileName);
          
         String message = "";
          
         try {
-            UploadImageToS3.uploadFile(fileName, multipart.getInputStream());
+            S3Util.uploadFile(fileName, multipart.getInputStream());
             message = "Your file has been uploaded successfully!";
         } catch (Exception ex) {
             message = "Error uploading file: " + ex.getMessage();
@@ -43,6 +43,10 @@ public class WebController {
          
         model.addAttribute("message", message);
         model.addAttribute("uploaded_image", "https://group-7-bucket.s3.us-west-1.amazonaws.com/" + fileName);
+
+        // Update S3 bucket objects after uploading a photo
+        S3Util object1 = new S3Util();
+		object1.getS3Objects();
          
         return "uploadsuccessful";              
     }

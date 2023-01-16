@@ -9,5 +9,7 @@ public class SpringtestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringtestApplication.class, args);
+		S3Util object1 = new S3Util();
+		object1.getS3Objects();
 	}
 }
