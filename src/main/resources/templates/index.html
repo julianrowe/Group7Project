@@ -56,25 +56,25 @@
             <div class="w3-row">
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} <3">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)"/>
+                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
                 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=3 AND ${iterStat.index} <6">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)"/>
+                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
                 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=6 AND ${iterStat.index} <9">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)"/>
+                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=9 AND ${iterStat.index} <12">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)"/>
+                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
             </div>

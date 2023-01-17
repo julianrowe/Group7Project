@@ -23,7 +23,7 @@ import software.amazon.awssdk.services.s3.waiters.S3Waiter;
 
 // Uploads an image to AWS S3 and gets objects from the S3 bucket
 public class S3Util {
-    private static final String BUCKET = "group-7-bucket";
+    private static final String BUCKET = "group7-image-bucket";
      
     public static void uploadFile(String fileName, InputStream inputStream) throws S3Exception, AwsServiceException, SdkClientException, IOException {
         S3Client client = S3Client.builder().build();
