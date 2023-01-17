@@ -1,5 +1,7 @@
 package com.example.group7project;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,11 @@ public class WebController {
     public ModelAndView viewHomePage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index.html");
+
+        // S3Util object1 = new S3Util();
+        // List<String> list = object1.getS3Objects();
+        // modelAndView.addObject("lists", list);
+
         return modelAndView;
     }
  
