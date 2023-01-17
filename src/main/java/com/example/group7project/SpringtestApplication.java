@@ -8,8 +8,9 @@ import org.springframework.boot.SpringApplication;
 public class SpringtestApplication {
 
 	public static void main(String[] args) {
+		// TODO: Show description of photo when clicked
+		// TODO: Show Cognito username of who uploaded the photo when clicked
+		// TODO: https
 		SpringApplication.run(SpringtestApplication.class, args);
-		S3Util object1 = new S3Util();
-		object1.getS3Objects();
 	}
 }

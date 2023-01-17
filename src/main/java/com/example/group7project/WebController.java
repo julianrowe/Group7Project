@@ -20,7 +20,7 @@ public class WebController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index.html");
 
-        // Gets a list of objects in the S3 Bucket and adds them to the model
+        // Gets a list of objects in the S3 Bucket and adds them to the model (updates whenever page is refreshed)
         S3Util object1 = new S3Util();
         List<String> image = object1.getS3Objects();
         modelAndView.addObject("images", image);

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="icon" href="tab-icon.png">
         <style>
             body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             .w3-quarter img{margin-bottom: -6px; cursor: pointer}
@@ -56,25 +57,25 @@
             <div class="w3-row">
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} <3">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
+                        <img th:src="@{'https://group7-image-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
                 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=3 AND ${iterStat.index} <6">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
+                        <img th:src="@{'https://group7-image-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
                 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=6 AND ${iterStat.index} <9">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
+                        <img th:src="@{'https://group7-image-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
 
                 <div class="w3-quarter">
                     <tr th:each="image,iterStat: ${images}" th:if="${iterStat.index} >=9 AND ${iterStat.index} <12">
-                        <img th:src="@{'https://group-7-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
+                        <img th:src="@{'https://group7-image-bucket.s3.us-west-1.amazonaws.com/'+${image}}" style="width:100%" onclick="onClick(this)" th:alt="${image}"/>
                     </tr>
                 </div>
             </div>
