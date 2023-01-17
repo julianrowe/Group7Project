@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### https, AWS Cognito and AWS S3 settings ###
+application.properties
+
+### JKS file for https ###
+*.jks

@@ -5,6 +5,15 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.awscore.exception.AwsServiceException;
 import software.amazon.awssdk.core.exception.SdkClientException;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -24,9 +33,15 @@ import software.amazon.awssdk.services.s3.waiters.S3Waiter;
 // Uploads an image to AWS S3 and gets objects from the S3 bucket
 public class S3Util {
     private static final String BUCKET = "group7-image-bucket";
-     
+    private static AwsCredentialsProvider awsCredentialsProvider;
+    private static String accessKey = "";
+    private static String secretKey = "";
+    
     public static void uploadFile(String fileName, InputStream inputStream) throws S3Exception, AwsServiceException, SdkClientException, IOException {
-        S3Client client = S3Client.builder().build();
+        AwsBasicCredentials awsBasicCredentials = AwsBasicCredentials.create(accessKey, secretKey);
+        awsCredentialsProvider = StaticCredentialsProvider.create(awsBasicCredentials);
+
+        S3Client client = S3Client.builder().credentialsProvider(awsCredentialsProvider).build();
          
         PutObjectRequest request = PutObjectRequest.builder()
                             .bucket(BUCKET)
@@ -52,9 +67,12 @@ public class S3Util {
     }
 
     public List<String> getS3Objects() {
+        AwsBasicCredentials awsBasicCredentials = AwsBasicCredentials.create(accessKey, secretKey);
+        awsCredentialsProvider = StaticCredentialsProvider.create(awsBasicCredentials);
+
         List<String> S3Objects = new ArrayList<>();
 
-        S3Client client = S3Client.builder().region(Region.US_WEST_1).build();
+        S3Client client = S3Client.builder().region(Region.US_WEST_1).credentialsProvider(awsCredentialsProvider).build();
         ListObjectsV2Request request = ListObjectsV2Request.builder().bucket(BUCKET).build();
         ListObjectsV2Iterable response = client.listObjectsV2Paginator(request);
 
