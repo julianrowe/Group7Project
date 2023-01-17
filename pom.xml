@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>group7project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Group7Project</name>
-	<description>Demo project for Spring Boot</description>
+	<description>We are creating an image uploading web application using Java, Spring Boot, AWS EC2, AWS Cognito and AWS S3 for our Cloud Computing class</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

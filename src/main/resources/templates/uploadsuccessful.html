@@ -11,7 +11,7 @@
                 <h3>[[${message}]]</h3>
             </div>
             <div>
-                <img th:src="@{${uploaded_image}}" />
+                <img th:src="@{'https://group7-image-bucket.s3.us-west-1.amazonaws.com/'+${uploaded_image}}"/>
             </div>
             <div>
                 <a href="/">Back to home page</a>
