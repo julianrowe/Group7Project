@@ -20,9 +20,10 @@ public class WebController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index.html");
 
-        // S3Util object1 = new S3Util();
-        // List<String> list = object1.getS3Objects();
-        // modelAndView.addObject("lists", list);
+        // Gets a list of objects in the S3 Bucket and adds them to the model
+        S3Util object1 = new S3Util();
+        List<String> image = object1.getS3Objects();
+        modelAndView.addObject("images", image);
 
         return modelAndView;
     }
@@ -49,7 +50,7 @@ public class WebController {
         }
          
         model.addAttribute("message", message);
-        model.addAttribute("uploaded_image", "https://group-7-bucket.s3.us-west-1.amazonaws.com/" + fileName);
+        model.addAttribute("uploaded_image", fileName);
 
         // Update S3 bucket objects after uploading a photo
         S3Util object1 = new S3Util();
